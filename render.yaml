@@ -1,0 +1,14 @@
+services:
+  # Backend Service
+  - type: web
+    name: backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node backend/app.js"
+    envVars:
+      - key: PORT
+        value: "3000"  # Replace with the port you want to use
+      - key: CLIENT_URL
+        value: " http://localhost:5173"  # Replace with your frontend URL if needed
+    instances: 1
+    autoDeploy: true
